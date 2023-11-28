@@ -1,6 +1,6 @@
 "use client";
 import { todo } from "node:test";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Todos() {
   const [inputText, setInputText] = useState("");
