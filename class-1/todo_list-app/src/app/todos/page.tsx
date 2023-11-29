@@ -1,11 +1,20 @@
 "use client";
-import { todo } from "node:test";
+import axios from "axios";
 import { useState, useEffect } from "react";
 
 export default function Todos() {
   const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([1, 2, 3]);
+  const [todos, setTodos] = useState([]); //[1, 2, 3]
   const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    axios.get("/api/todos").then((resp) => {
+      console.log(resp.data);
+      setTodos(resp.data.todos);
+    });
+  }, []);
+
+  async function addTodo() {}
 
   if (editMode) {
     // true
