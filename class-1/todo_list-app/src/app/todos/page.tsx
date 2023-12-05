@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function Todos() {
   const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]); //[1, 2, 3]
+  const [todos, setTodos] = useState([1, 2, 3]); //[1, 2, 3]
   const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
